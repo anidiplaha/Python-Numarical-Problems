@@ -1,14 +1,17 @@
-num = int(input("enter number of digits you want in series (minimum 2): "))
- 
-first = 0
-second = 1
- 
-print("\nfibonacci series is:")
-print(first, ",", second, end=", ")
- 
-for i in range(2, num):
-	next = first + second
-        if i != num:
-                print (end=" ")     
-	first = second
-	second = next
+nterms = int(input("How many terms? "))
+n1, n2 = 0, 1
+count = 0
+if nterms <= 0:
+   print("Please enter a positive integer")
+elif nterms == 1:
+   print("Fibonacci sequence upto",nterms,":")
+   print(n1)
+else:
+   print("Fibonacci sequence:")
+   while count < nterms:
+       print(n1)
+       nth = n1 + n2
+       # update values
+       n1 = n2
+       n2 = nth
+       count += 1
